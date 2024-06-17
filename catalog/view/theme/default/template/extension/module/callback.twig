@@ -1,0 +1,49 @@
+<div class="">
+  <div class="">
+    <div class="callback">
+      {% if module_callback_title %}
+        <div class="cb-title">
+          {{ module_callback_title }} 
+        </div>
+      {% endif %}
+      <div class="">
+        <div class="col-sm-4 col-xs-12" style="display: none">
+          <input type="text" name="name" placeholder="{{ entry_name }}" autocomplete="off" value="Call Me" class="input-name" required="required" pattern=".{3,}">
+        </div>
+        <div class="">
+          <input type="tel" name="phone" placeholder="{{ entry_phone }}" autocomplete="off" value="" class="input-phone" required="required">
+        </div>
+        <div class="">
+          <div class="fcallback">{{ module_callback_button }}</div>
+        </div>
+      </div>
+      <div class="ok-message"></div>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          {% if module_callback_mask %}
+            $(".input-phone").mask("{{ module_callback_mask }}");
+          {% endif %}
+          $(".fcallback").on('click', function() {
+            var name = $('.input-name').val();
+            var phone = $('.input-phone').val();
+            var email = "{{ config_email }}";
+            if(name!=''&&phone!=''){
+                  $.ajax({
+                    type: "GET",
+                    url: "/catalog/controller/extension/module/callback-sender.php",
+                    data: 'name='+name+'&phone='+phone+'&email='+email,
+                    success: function() {
+                          $('.ok-message').html('{{ entry_ok }}');
+                          setTimeout(function() { $('.ok-message').html(''); }, 2000)
+                      }
+                  });
+              } else {
+                $('.ok-message').html('{{ entry_error }}');
+                setTimeout(function() { $('.ok-message').html(''); }, 2000)
+              }
+            });
+        })
+      </script>
+    </div>
+  </div>
+</div>

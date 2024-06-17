@@ -1,0 +1,164 @@
+.callback {
+  width: max-content;
+  /*background: rgba(0, 0, 0, 0.6);*/
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  padding: 25px 40px 12px 40px;
+  margin: 15px 20px 30px 20px;
+  font-family: "Open Sans",Arial,"Helvetica";
+}
+.callback .cb-title {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 24px;
+}
+.callback input {
+  width: 100%;
+  padding: 8px 14px 12px 14px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 19px;
+  background: #ffffff;
+  height: 38px;
+}
+.callback input:focus {
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+}
+.callback input:focus::-webkit-input-placeholder {
+  color: #fff;
+}
+.callback input:focus:-moz-placeholder {
+  color: #fff;
+}
+.callback input:focus::-moz-placeholder {
+  color: #fff;
+}
+.callback input:focus:-ms-input-placeholder {
+  color: #fff;
+}
+.callback input::-webkit-input-placeholder {
+  position: relative;
+  top: 3px;
+}
+.callback input:-moz-placeholder {
+  position: relative;
+  top: 3px;
+}
+.callback input::-moz-placeholder {
+  position: relative;
+  top: 3px;
+}
+.callback input:-ms-input-placeholder {
+  position: relative;
+  top: 3px;
+}
+.callback .fcallback {
+  background-color: hsl(195, 79%, 43%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56c5eb", endColorstr="#1798c4");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#56c5eb), to(#1798c4));
+  background-image: -moz-linear-gradient(top, #56c5eb, #1798c4);
+  background-image: -ms-linear-gradient(top, #56c5eb, #1798c4);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #56c5eb), color-stop(100%, #1798c4));
+  background-image: -webkit-linear-gradient(top, #56c5eb, #1798c4);
+  background-image: -o-linear-gradient(top, #56c5eb, #1798c4);
+  background-image: linear-gradient(#56c5eb, #1798c4);
+  border-color: #1798c4 #1798c4 hsl(195, 79%, 38%);
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  padding: 8px 14px 11px 14px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 19px;
+  text-align: center;
+  height: 38px;
+  color: #fff;
+  font-family: "Open Sans",Arial,"Helvetica";
+  cursor: pointer;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.callback .fcallback:hover {
+  background-color: hsl(195, 87%, 36%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2dbff0", endColorstr="#0b83ab");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#2dbff0), to(#0b83ab));
+  background-image: -moz-linear-gradient(top, #2dbff0, #0b83ab);
+  background-image: -ms-linear-gradient(top, #2dbff0, #0b83ab);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2dbff0), color-stop(100%, #0b83ab));
+  background-image: -webkit-linear-gradient(top, #2dbff0, #0b83ab);
+  background-image: -o-linear-gradient(top, #2dbff0, #0b83ab);
+  background-image: linear-gradient(#2dbff0, #0b83ab);
+  border-color: #0b83ab #0b83ab hsl(195, 87%, 31%);
+  -webkit-font-smoothing: antialiased;
+}
+.callback .ok-message {
+  text-align: center;
+  color: #fff;
+  margin-top: 12px;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+.callback .cb-title {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+.callback {
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    padding: 15px 20px 10px 20px;
+    margin: 25px auto;
+    max-width: 300px;
+  }
+.callback input {
+    width: 100%;
+    padding: 8px 14px 12px 14px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 16px;
+    background: #FFF;
+    height: 34px;
+    margin-bottom: 10px;
+  }
+.callback .fcallback {
+    font-size: 16px;
+    height: 38px;
+    padding: 6px 14px 11px 14px;
+  }
+}
+
+.callback .fcallback {
+  color: white;
+  font-weight: 700;
+  background: #0077FA;
+  border-color: white;
+}
+
+.callback > div {
+  display: flex;
+  flex-direction: 10px;
+  column-gap: 10px;
+}

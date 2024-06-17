@@ -1,0 +1,23 @@
+<div id="subscribe" class="subscribe">
+	<form name="subscribe" class="container">
+		<div class="row row-flex">
+			<div class="subscribe-container">
+			<div class="subscribe__info">
+				ДАРИМ СКИДКУ 100 ГРН ЗА ПОДПИСКУ
+			</div>
+				<div class="subscribe__block"> 
+					<div class="subscribe__inputs">
+						<input type="text" name="email" value="{{ customer_email }}" placeholder="{{ text_subscribe_mail_placeholder }}" aria-label="Email" class="subscribe__input subscribe__input-email form-control" />
+						{# <input type="password" name="password" value="" placeholder="Ваш Email" aria-label="Password"  autocomplete="on" class="subscribe__input subscribe__input-password form-control" /> #}
+					</div>
+					<button type="button" class="subscribe__btn btn btn-lg btn-block" data-loading-text="{{ text_loading }}"><i class="fa fa-envelope hidden-sm"></i> <span>{{ button_subscribe }}</span></button>
+				</div>
+				{# {% if text_subscribe_agree %}
+					<label class="subscribe__agree input">
+						<input id="confirm" type="checkbox" name="confirm" value="1" checkout /><span>{{ text_subscribe_agree }}</span>
+					</label>
+				{% endif %} #}
+			</div>
+		</div>
+	</form>
+</div>

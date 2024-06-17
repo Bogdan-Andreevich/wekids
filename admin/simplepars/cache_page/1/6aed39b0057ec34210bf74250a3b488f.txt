@@ -1,0 +1,243 @@
+###########################################################
+# ВНИМАНИЕ!!! Страница взята из кеша модуля SimplePars!!! #
+# Дата создания кеша - 2023-10-18 12:25:02                #
+###########################################################
+
+#[url]https://b2b.sanwell.biz/tel:+380671769863[/url]
+<!DOCTYPE html>
+<html lang="uk-UA" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/ico" sizes="16x16" href="/favicon.ico">
+    <title>Помилка 404 - SANWELL</title>
+        <link href="/plugins/bower_components/typeahead.js-master/jquery.typeahead.min.css" rel="stylesheet">
+<link href="/assets/f09ba091/css/bootstrap.css?v=1550073338" rel="stylesheet">
+<link href="/public/bootstrap/dist/css/bootstrap.min.css?v=1617700675" rel="stylesheet">
+<link href="/source/angular/angular-csp.css?v=1617700676" rel="stylesheet">
+<link href="/public/css/animate.css?v=1617700675" rel="stylesheet">
+<link href="/public/css/style.css?v=1637222114" rel="stylesheet">
+<link href="/public/css/colors/default.css?v=1617700675" rel="stylesheet">
+<link href="/public/css/main.css?v=1617700675" rel="stylesheet">
+<script src="/public/js/html5shiv.js"></script>
+<script src="/public/js/respond.min.js"></script>
+<script src="/source/angular/angular.min.js?v=1617700676"></script>
+<script src="/source/angular/angular-sanitize/angular-sanitize.js?v=1617700676"></script>
+<script src="/assets/8b8a0156/raven.min.js?v=1559654692"></script>
+<script src="/assets/c6cc2b2a/angular.min.js?v=1559654692"></script></head>
+
+<script>
+    var mainVocabulary = {
+        'NoResultsFoundFor' : 'Немає результатів за запитом',
+        'Delete' : 'Видалити',
+        'Close' : 'Закрити',
+        'Error' : 'Помилка',
+        'UninstallFailed' : 'Видалення не вдалося',
+        'items' : 'Товари',
+        'categories' : 'Категорії товарів',
+        'brand' : 'Виробник',
+        'pages' : 'Сторінки',
+        'checkAll' : 'Обрати все',
+        'uncheckAll' : 'Очистити всe',
+        'change_dogovor_start' : 'Тип договору змінено на',
+        'change_dogovor_end' : 'У Кошику вже є додані товари, що недоступні в даному типі договору.',
+        'removeItemsFromCart' : 'Видалити раніше додані товари з Кошику',
+        'saveToDraft' : 'Зберегти раніше додані товари з Кошику в чернетку замовлення',
+        'typeContractChanged' : 'Змінено тип договору',
+        'congratulation' : 'Вітаємо',
+        'whatToDoWithExistItems' : 'Що зробити з уже наявними товарами в Кошику, які не доступні в даному типі договору?',
+        'cartWasRemoved' : 'Товари успішно видалені з Кошику',
+    }
+</script>
+
+<body ng-cloak ng-controller="mainController">
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+        <section id="wrapper" class="new-login-register">
+    <div class="lg-info-panel">
+        <div class="inner-panel">
+            <a href="/" class="p-20 di"><img src="/public/images/logo-mini.svg" height="27"></a>
+        </div>
+    </div>
+    <div class="error-page">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="text-danger">404</h1>
+            </div>
+            <div class="col-lg-5 col-sm-6 max-w-400">
+<!--                <h2>--><!--</h2>-->
+                <p class="big-text">Ви знаходитесь тут, тому що вказали адресу сторінки, яка вже не існує або була переміщена за іншою адресою.</p>
+                <p class="text-muted">Ви можете повернутися на <a href="/">Головну</a> або перейти в <a href="/catalog">Каталог</a></p>
+                <div class="typeahead__container typeahead-header-search text-left">
+                    <div class="typeahead__field input-group">
+                        <span class="typeahead__query">
+                        <input type="text"
+                               class="headertypeahead form-control input-sm p-r-30"
+                               placeholder="Пошук за кодом або назвою"
+                               required
+                               autocomplete="off"
+                        >
+                        </span>
+                        <span class="input-group-btn">
+                            <a class="typeahead__submit btn btn-default btn-sml waves-effect waves-light"><i class="fa fa-search"></i></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="s_links">
+                    <a alt="Telegram" title="Telegram" href="https://t.me/sanwellbiz" target="_blank"><i class="fa fa-send"></i></a>
+                    <a alt="Facebook" title="Facebook" href="https://business.facebook.com/sanwellcompany/?business_id=1753525084736855" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a alt="YouTube" title="YouTube" href="https://www.youtube.com/channel/UC8WXxDJDeVX55lwySIH3WSQ/?disable_polymer=true" target="_blank"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .error-page {
+            margin: 7% 0 0 500px;
+        }
+        .error-page h1 {
+            text-align: center;
+            font-size: 200px;
+            font-weight: 500;
+            color: #8d9ea7;
+            line-height: 135px;
+        }
+        .error-page h2 {
+            color: #000000;
+            font-size: 45px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            line-height: 50px;
+            margin-top: 30px;
+        }
+        .error-page .big-text {
+            color: #000000;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 28px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        .error-page .headertypeahead {
+            height: 38px;
+        }
+        .error-page .typeahead__container {
+            margin: 15px 0 20px;
+            width: 100%;
+        }
+        .error-page .s_links a {
+            color: #8d9ea7;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .max-w-400 {
+            max-width: 400px;
+        }
+
+        @media (max-width: 1350px) {
+            .error-page {
+                margin: 7% 0 0 450px;
+            }
+            .error-page h1 {
+                font-size: 130px;
+                line-height: 105px;
+            }
+        }
+        @media (max-width: 1200px) {
+            .max-w-400 {
+                max-width: 280px;
+            }
+        }
+        @media (max-width: 1023px) {
+            .error-page {
+                margin: 7% 50px 0;
+            }
+            .max-w-400 {
+                max-width: 400px;
+            }
+        }
+        @media (max-width: 767px) {
+            .max-w-400 {
+                max-width: 400px;
+                margin: 30px auto 0;
+            }
+        }
+        @media (max-width: 400px) {
+            .error-page h1 {
+                font-size: 130px;
+                line-height: 105px;
+            }
+            .error-page {
+                margin: 7% 30px 0;
+            }
+        }
+    </style>
+</section>
+
+
+<script src="/assets/ea2f14e/jquery.js?v=1614705114"></script>
+<script src="/plugins/bower_components/typeahead.js-master/jquery.typeahead.min.js"></script>
+<script src="/assets/9a3ebd47/yii.js?v=1693316177"></script>
+<script src="/public/bootstrap/dist/js/bootstrap.min.js?v=1617700675"></script>
+<script src="/source/controllers/mainController.js?v=1634565401"></script>
+<script src="/admin/source/controllers/rules.js"></script>
+<script src="/admin/source/controllers/validation.js"></script>
+<script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js?v=1617700675"></script>
+<script src="/public/js/jquery.slimscroll.js?v=1617700675"></script>
+<script src="/public/js/waves.js?v=1617700676"></script>
+<script src="/public/js/ui-mask.js"></script>
+<script src="/public/js/custom.min.js?v=1617700675"></script>
+<script src="/plugins/bower_components/styleswitcher/jQuery.style.switcher.js?v=1617700675"></script>
+<script>$(document).ready(function() {
+    if($(".headertypeahead").length) {
+        $.typeahead({
+            input: ".headertypeahead",
+            order: "asc",
+            dynamic: true,
+            delay: 500,
+            minLength: 2,
+            maxItem: 5,
+            hint: false,
+            filter: false,
+            //emptyTemplate: translate('NoResultsFoundFor', catalogVocabulary) + ": {{query}}",
+            source: {
+                ajax: function (query) {
+                    return {
+                        type: "GET",
+                        url: "/catalog/catalog/list",
+                        data: {
+                            input: "{{query}}"
+                        },
+                        callback: {
+                            done: function (data) {
+                                return data;
+                            }
+                        }
+                    };
+                }
+            },
+            callback: {
+                onClick: function (node, a, item, event) {
+                    window.location = '/catalog?name='+item.display;
+                }
+            },
+        });
+        
+        document.querySelector('.headertypeahead').addEventListener('keyup', function (event) {
+            if (event.keyCode == 13) {
+                window.location = '/catalog?name='+document.querySelector('.headertypeahead').value;
+            }
+        });
+        
+        document.querySelector('.typeahead__submit').addEventListener('click', function (event) {
+            window.location = '/catalog?name='+document.querySelector('.headertypeahead').value;
+            $('.headertypeahead').blur();
+        });
+    }
+});</script></body>
+</html>

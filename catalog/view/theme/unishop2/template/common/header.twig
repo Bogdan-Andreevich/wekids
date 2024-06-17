@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html dir="{{ direction }}" lang="{{ lang }}">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <base href="{{ base }}"/>
+    {% if robots %}
+        <meta name="robots" content="{{ robots }}"/>
+    {% endif %}
+    {% if description %}
+        <meta name="description" content="{{ description }}"/>
+    {% endif %}
+    {% if keywords %}
+        <meta name="keywords" content="{{ keywords }}"/>
+    {% endif %}
+    <meta property="og:title" content="{{ title }}"/>
+    <meta property="og:type" content="website"/>
+    {% if og_url %}
+        <meta property="og:url" content="{{ og_url }}"/>
+    {% endif %}
+    {% if og_image %}
+        <meta property="og:image" content="{{ og_image }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ name }}"/>
+    <meta name="theme-color" content="#{{ theme_color }}"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    {% for link in links %}
+        <link href="{{ link.href }}" rel="{{ link.rel }}"/>
+    {% endfor %}
+    {% for font in font_preload %}
+        <link href="{{ font }}" rel="preload" as="font" type="font/woff2" crossorigin/>
+    {% endfor %}
+    {% for style in styles %}
+        {{ 'merged' in style.href ? '<link href="'~style.href~'" rel="preload" as="style" />' }}
+        <link href="{{ style.href }}" rel="{{ style.rel }}" media="{{ style.media }}"/>
+    {% endfor %}
+    <script>const items_on_mobile = '{{ items_per_row_on_mobile }}', module_on_mobile = '{{ module_on_mobile }}',
+            default_view = '{{ default_view }}', default_mobile_view = '{{ default_mobile_view }}';</script>
+    {% for script in scripts %}
+        {{ 'merged' in script ? '<link href="'~script~'" rel="preload" as="script" />' }}
+        <script src="{{ script }}"></script>
+    {% endfor %}
+    {% if user_js %}
+        <script>{{ user_js }}</script>
+    {% endif %}
+    {% for analytic in analytics %}
+        {{ analytic }}
+    {% endfor %}
+    {{ menu_expanded ? '<style>@media (min-width:992px) {header .menu1 .menu__collapse {display:block !important}}</style>' }}
+    <noscript>
+        <style>.uni-module__wrapper {
+                opacity: 1
+            }</style>
+    </noscript>
+
+    <!-- Include jQuery and jQuery UI -->
+
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    <link href="catalog/view/theme/unishop2/stylesheet/app.css" rel="stylesheet">
+
+</head>
+
+<body {{ class ? 'class="'~class~'"' }}>
+
+
+<header class="header">
+
+
+    <div class="header_top-wrap">
+        <div class="container">
+            <div class="header_top">
+                <nav class="header_nav">
+
+                    <ul>
+                        {% for headerlink in headerlinks %}
+                            <li class="first"><a href="{{ headerlink.link }}"
+                                                 title="{{ headerlink.title }}">{{ headerlink.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header_middle-wrap">
+        <div class="container">
+            <div class="header_middle">
+{#                <div class="header_burger"><a class="burger js-mobile-nav-link" href="javascript:;"><span></span></a>#}
+{#                </div>#}
+                <div class="menu-open visible-xs visible-sm">
+                    <i class="menu-open__icon fas fa-bars"></i>
+                    {#                    <span class="menu-open__title {{ show_title_on_mobile ? 'show-on-mobile' }}">{{ text_menu }}</span>#}
+                    <span class="menu-open__title {{ show_title_on_mobile ? 'show-on-mobile' }}"></span>
+                </div>
+                <div class="header_logo">
+
+
+                    {% if og_url is defined and home == og_url %}
+                        <a class="logo"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}"
+                                             class="header-logo__img img-responsive" width="{{ logo_width }}"
+                                             height="{{ logo_height }}"/></a>
+                    {% else %}
+                        <a class="logo" href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}"
+                                                               width="{{ logo_width }}" height="{{ logo_height }}"
+                                                               class="img-responsive"/></a>
+                    {% endif %}
+                </div>
+
+                <div id="search" class="header_search-btn-mob-bg js-header_search-btn-mob-bg">
+                    {{ search }}
+                </div>
+
+                <div class="header_phones phones-block">
+                    <div class="phones-block_header" style="display: none">
+                        <img class="icon" src="catalog/view/theme/unishop2/imgs/icons/phone.svg" alt="phone">
+                        <span class="tel-wrap">
+                                        <a class="tel" href="tel:0666223238">0666223238</a>
+                                        <span class="text js-phones-open">Заказать звонок</span>
+                                    </span>
+                        <span class="toggle js-phones-open">
+                                        <span></span>
+                                    </span>
+                    </div>
+                    <div class="js-phones-close mob-js-phones-close"></div>
+                    <div class="phones-block_body js-phones-body">
+                        <div class="phones-block_top">
+                            <img class="icon" src="/image/imgs/icons/phone-p.svg" alt="phone">
+                            <span class="tel-wrap">
+                                            <a class="tel" href="tel:0666223238">0666223238</a>
+                                        </span>
+                            <span class="toggle js-phones-close">
+                                            <span></span>
+                                        </span>
+                        </div>
+                        <div class="phones-block_top">
+                            <img class="icon" src="/image/imgs/icons/phone-p.svg" alt="phone">
+                            <span class="tel-wrap">
+                                            <a class="tel" href="tel:0682719660">0682719660</a>
+                                        </span>
+                        </div>
+                        <div class="phones-block_time">
+                            <div class="title">График Call-центра:</div>
+                            <p><b>Пн-Пт:</b> 10:00-19:00</p>
+                            <p><b>Сб-Вс:</b> 10:00-19:00</p></div>
+                        <div class="phones-block_call js-ajax-form">
+                            <form class="ajax_form phones-block_call" id="callback-form" method="post" action="">
+                                <input type="hidden" name="gid" value="GA1.3.460396062.1697465100">
+                                <input type="hidden" name="link" value="https://wekids.com.ua/detskie-velosipedy/">
+                                <input type="hidden" name="workemail">
+                                <input type="hidden" name="pagetitle" value="Велосипеды">
+                                <input class="phone" name="phone_call2" type="tel" id="af_phone_call2"
+                                       placeholder="+38 (___) ___-__-__" im-insert="true">
+                                <button class="btn btn-primary" type="submit" href="javascript:void(0);">Заказать
+                                    звонок
+                                </button>
+
+                                <input type="hidden" name="af_action" value="ddd578d4a105bf70b8ab6421a468061f">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="header_right">
+
+                    <div class="header_cart toggle-block mob-header-cart">
+                                    <span>
+                                        
+                                        {{ cart }}                                   
+                                    </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            {{ menu }}
+
+{#            <div id="search2" class="visible-xs visible-sm"></div>#}
+{#            <script>$('#search .header-search').clone().appendTo('#search2');</script>#}
+        </div>
+    </div>
+</header -->
+<main class="main">

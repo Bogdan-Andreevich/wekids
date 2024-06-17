@@ -1,0 +1,197 @@
+<!-- Include jQuery and jQuery UI -->
+{# <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> #}
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<div class="filter-default">
+{#	<div class="heading">{{ heading_title }}</div>#}
+	<div class="uni-wrapper-filter">
+
+		<div class="filter-default__group">
+			<div class="filter-default__group-name">
+				Цена <sup></sup>
+			</div>
+			<div class="price-slider" id="price-slider"></div>
+			<input type="text" id="price-range" readonly>
+		</div>
+
+		{% for filter_group in filter_groups %}
+			<div class="filter-default__group">
+				<div class="filter-default__group-name">
+					{{ filter_group.name }} <sup></sup>
+				</div>
+				<div id="filter-group{{ filter_group.filter_group_id }}" class="filter-icons">
+					{% for filter in filter_group.filter %}
+						<div class="filter-default__item">
+							<span class="filter-icon" data-value="{{ filter.filter_id }}">{{ filter.name }}</span>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+		<hr />
+		<button type="button" id="button-filter" class="btn btn-primary"><i class="fa fa-filter" aria-hidden="true"></i><span>{{ button_filter }}</span></button>
+	</div>
+</div>
+
+<style>
+	.filter-icons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.filter-default__item {
+		width: calc(50% - 10px);
+		margin: 5px;
+	}
+
+	.filter-icon {
+		display: inline-block;
+		padding: 8px;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		cursor: pointer;
+		width: 100%;
+		transition: background-color 0.3s ease;
+		text-align: center;
+	}
+
+	.filter-icon.selected {
+		background-color: #f0f0f0;
+	}
+
+	.price-slider {
+		height: 10px;
+		background-color: #ddd;
+		margin: 10px 0;
+	}
+
+	#price-range {
+		width: 80%;
+		margin: 10px 0;
+	}
+</style>
+
+<script>
+	$(document).ready(function () {
+		// Initialize the price slider for display purposes only
+		$("#price-slider").slider({
+			range: true,
+			min: 0, // Set your minimum price
+			max: 1000, // Set your maximum price
+			values: [100, 500], // Initial values for the slider handles
+			slide: function (event, ui) {
+				$("#price-range").val(ui.values[0] + " - " + ui.values[1]);
+			}
+		});
+
+		// Set initial value for the price range input
+		$("#price-range").val($("#price-slider").slider("values", 0) + " - " + $("#price-slider").slider("values", 1));
+	});
+
+	$(document).ready(function () {
+		$('.filter-icon').on('click', function () {
+			$(this).toggleClass('selected');
+		});
+
+		$('#button-filter').on('click', function () {
+			let filter = [];
+
+			$('.filter-icon.selected').each(function () {
+				filter.push($(this).data('value'));
+			});
+
+			let url = '{{ action }}&filter=' + filter.join(',');
+
+			// Your remaining AJAX or location change logic here
+			// ...
+		});
+	});
+
+	$('#button-filter').on('click', () => {
+		filter = [];
+
+	//	$('input[name^=\'filter\']:checked').each(function (element) {
+	//		filter.push(this.value);
+	//	});
+
+		$('.filter-icon.selected').each(function () {
+			filter.push($(this).data('value'));
+		});
+
+		var url = '{{ action }}&filter=' + filter.join(',');
+
+		{% if ajax_filter %}
+
+		let products = $('.products-block'),
+				pagination = $('.pagination'),
+				paginationText = $('.pagination-text');
+
+		$.ajax({
+			url: url,
+			type: 'get',
+			dataType: 'html',
+			beforeSend: function () {
+				$('html body').append('<div class="full-width-loading"></div>');
+			},
+			complete: function () {
+				uniSelectView.init();
+				if ($('.products-block').length) uniScrollTo('.products-block');
+				$.each($('.product-thumb a'), function () {
+					$(this).attr('target', '_blank');
+				});
+			},
+			success: function (data) {
+				let result = [];
+
+				result.product = $(data).find('.products-block').html();
+				result.pagination = $(data).find('.pagination').html();
+				result.paginationText = typeof ($(data).find('.pagination-text').html()) != 'undefined' ? $(data).find('.pagination-text').html() : '';
+
+				if (typeof (result.product) == 'undefined') {
+					result.product = '<div class="div-text-empty" style="width:100%;margin:0 10px">{{ text_no_product }}</div>';
+					result.pagination = '';
+				} else if (typeof (result.pagination) == 'undefined') {
+					result.pagination = '';
+				}
+
+				window.history.pushState('', '', url);
+
+				if (!pagination.length) paginationText.before('<div class="pagination"></div>');
+
+				products.html(result.product);
+				pagination.html(result.pagination);
+				paginationText.html(result.paginationText);
+
+				$('.full-width-loading').remove();
+			}
+		});
+		{% else %}
+		location = url;
+		{% endif %}
+	});
+
+	function def_filter() {
+		if ($(window).width() < 767 && !$('.filter-default__icon').length) {
+			$('#column-left').after('<i class="filter-default__icon btn-default fas fa-filter"></i>');
+
+			$('.filter-default__icon').on('click', () => {
+				$('#column-left, .filter-default__icon').toggleClass('show');
+			});
+
+			$('.filter-default #button-filter, #content').on('click', () => {
+				$('#column-left, .filter-default__icon').removeClass('show');
+			});
+		} else {
+			$('.filter-default__icon').remove();
+		}
+	};
+
+	def_filter();
+
+	let wWidth = $(window).width();
+
+	$(window).resize(function () {
+		if ($(this).width != wWidth) def_filter();
+	});
+</script>

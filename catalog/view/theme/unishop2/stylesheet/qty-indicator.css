@@ -1,0 +1,9 @@
+.qty-indicator{display:flex;align-items:center;margin:0 0 15px;font-size:.95em;color:#777;white-space:nowrap}
+.qty-indicator:before{content:attr(data-text);margin:0 5px 0 0}
+.qty-indicator__bar{position:relative;overflow:hidden;width:61px;height:10px;border-radius:3px}
+.qty-indicator__bar:before, .qty-indicator__bar:after{position:absolute;top:0;bottom:0;width:21.5%;content:'';border-left:solid 1px #fff;border-right:solid 1px #fff;opacity:.5}
+.qty-indicator__bar:before{left:20%}
+.qty-indicator__bar:after{left:60%}
+.qty-indicator__percent{height:100%}
+.qty-indicator__percent:before{position:absolute;z-index:2;top:0;bottom:0;left:0;right:0;content:'';border:solid 1px #000;border-radius:2px;opacity:.08}
+.qty-indicator__text{font-weight:500}
